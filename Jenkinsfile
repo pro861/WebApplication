@@ -1,7 +1,7 @@
 pipeline {
     agent any
     tools {
-        msbuild 'MSBuild' // Assurez-vous que 'MSBuild' est correctement configuré dans Jenkins
+        msbuild 'msBuild' // Assurez-vous que 'msBuild' est correctement configuré dans Jenkins
     }
     stages {
         stage('Checkout') {
@@ -12,12 +12,12 @@ pipeline {
         stage('Build') {
             steps {
                 script {
-                    def msbuildPath = tool name: 'MSBuild', type: 'MSBuild'
+                    def msbuildPath = tool name: 'msBuild', type: 'msBuild'
                     bat "${msbuildPath}/msbuild.exe /p:Configuration=Release"
                 }
             }
         }
-        stage('Archive Artifacts') {
+        stage('Archive Artifactssss') {
             steps {
                 archiveArtifacts artifacts: '**/bin/Release/**/*', fingerprint: true
             }
