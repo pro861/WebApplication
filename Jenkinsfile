@@ -8,7 +8,7 @@ pipeline {
             }
         }
         
-        stage('Archive Artifactsssssss') {
+        stage('Archive Artifactsssssjjjss') {
             steps {
                 archiveArtifacts artifacts: '**/bin/Release/**/*', fingerprint: true
             }
